@@ -1,20 +1,18 @@
-package com.example.attr
+package com.example.attr.feature
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import com.example.attr.databinding.FragmentFirstBinding
+import com.example.attr.feature.databinding.FragmentFeatureBinding
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment : Fragment() {
+class FeatureFragment : Fragment() {
 
-  private var _binding: FragmentFirstBinding? = null
+  private var _binding: FragmentFeatureBinding? = null
 
   // This property is only valid between onCreateView and
   // onDestroyView.
@@ -25,7 +23,7 @@ class FirstFragment : Fragment() {
     savedInstanceState: Bundle?
   ): View? {
 
-    _binding = FragmentFirstBinding.inflate(inflater, container, false)
+    _binding = FragmentFeatureBinding.inflate(inflater, container, false)
     return binding.root
 
   }
@@ -34,8 +32,7 @@ class FirstFragment : Fragment() {
     super.onViewCreated(view, savedInstanceState)
 
     binding.buttonFirst.setOnClickListener {
-      requireActivity().startActivity(Intent(requireContext(), Class.forName("com.example.attr.feature.FeatureActivity")))
-//      findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+      requireActivity().finish()
     }
   }
 
